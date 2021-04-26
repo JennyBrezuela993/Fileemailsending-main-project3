@@ -106,3 +106,12 @@ function validateEmail(field) {
         field.classList.add('error');
     }
 }
+//Reset the form
+function resetForm(e) {
+    e.preventDefault();
+
+     sendEmailForm.reset();
+     // disable the send button on load
+    sendBtn.disabled = true;
+
+}

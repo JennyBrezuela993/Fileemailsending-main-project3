@@ -59,4 +59,27 @@ function sendEmail(e) {
         }, 5000);
 
     }, 3000 );
+}//Validate the fields
+function validateField() {
+    let errors;
+
+    //Validate the length of the field
+    validateLength(this);
+    
+    //Validate the Email
+    if(this.type ==='email') {
+        validateEmail(this);
+    }
+    
+    //Both will return errors
+    errors = document.querySelectorAll('.error');
+
+    //Check that the inputs are not empty
+    if(email.value !== '' && subject.value !== '' && message.value !== '') {
+        if(errors.length === 0) {
+            sendBtn.disabled = false;
+        }
+    }
+
 }
+
